@@ -7,55 +7,50 @@
     <style>
         body, html {
             margin: 0;
-            padding: 0;
+            padding: 0.1px; /* Mobil tarayıcılarda tam yükseklik hatasını önler */
+            width: 100%;
             height: 100%;
-            background-color: #0b2318; /* Arka plan uyumlu koyu renk */
+            background-color: #0b2318; /* Arka plan koyu yeşil uyumlu ton */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
             font-family: Arial, sans-serif;
         }
+
+        /* Görseli ve butonları taşıyan ana kutu */
         .landing-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 500px; /* Bilgisayarda da ideal boyutta tutar */
             background-image: url('8E5E388A-D1F2-431D-BCAD-239552F261BF.png');
-            background-size: contain; /* Masaüstü için */
+            background-size: 100% 100%; /* Telefonda ve bilgisayarda yazının tamamının görünmesi için ekranı birebir doldurur */
             background-position: center;
             background-repeat: no-repeat;
-            width: 100%;
-            height: 100vh;
-            position: relative;
         }
+
+        /* Tıklama alanları (WhatsApp ve Telegram butonları üstü) */
         .click-area {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 280px;
-            height: 50px;
+            width: 70%; /* Buton genişliği */
+            max-width: 280px;
+            height: 6%; /* Buton yüksekliği */
             border-radius: 30px;
             cursor: pointer;
             z-index: 10;
         }
+
+        /* WhatsApp Buton Konumu */
         .whatsapp-link {
-            bottom: 25%;
-        }
-        .telegram-link {
-            bottom: 16%;
+            bottom: 24%;
         }
 
-        /* TELEFONLAR İÇİN ÖZEL AYARLAR (Dikey Ekran) */
-        @media (max-width: 768px) {
-            .landing-container {
-                background-size: cover; /* Mobilde ekranı doldursun */
-                background-position: center center;
-            }
-            .click-area {
-                width: 80%; /* Mobilde ekrana göre esneklik kazanır */
-                max-width: 320px;
-                height: 52px;
-            }
-            .whatsapp-link {
-                bottom: 22%; /* Telefonda butonların yüksekliği */
-            }
-            .telegram-link {
-                bottom: 14%;
-            }
+        /* Telegram Buton Konumu */
+        .telegram-link {
+            bottom: 15%;
         }
     </style>
 </head>
