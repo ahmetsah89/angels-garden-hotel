@@ -19,67 +19,54 @@
             height: 100%;
             font-family: 'Montserrat', sans-serif;
             color: #ffffff;
-            overflow: hidden;
+            background-color: #0b2318;
+            overflow-x: hidden;
         }
 
-        /* Arka Plan İstanbul Silüeti Görseli */
+        /* Ana Ekran ve Arka Plan */
         .bg-container {
-            position: fixed;
-            top: 0;
-            left: 0;
+            min-height: 100vh;
             width: 100%;
-            height: 100%;
-            background-image: linear-gradient(rgba(11, 35, 24, 0.75), rgba(11, 35, 24, 0.85)), url('8E5E388A-D1F2-431D-BCAD-239552F261BF.png');
+            background-image: linear-gradient(rgba(11, 35, 24, 0.65), rgba(11, 35, 24, 0.8), rgba(11, 35, 24, 0.9)), url('8E5E388A-D1F2-431D-BCAD-239552F261BF.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-        }
-
-        /* İçerik Kutusu */
-        .content-card {
-            text-align: center;
-            max-width: 650px;
-            width: 100%;
             padding: 40px 20px;
-            background: rgba(11, 35, 24, 0.4);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            text-align: center;
         }
 
         /* Yıldızlar */
         .stars {
             color: #d4af37;
-            font-size: 20px;
-            letter-spacing: 5px;
+            font-size: 22px;
+            letter-spacing: 6px;
             margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
 
         /* Otel Başlığı */
         .hotel-title {
             font-family: 'Cinzel', serif;
-            font-size: 32px;
+            font-size: 38px;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             color: #f3e5ab;
             text-transform: uppercase;
             margin-bottom: 8px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            text-shadow: 0 3px 6px rgba(0,0,0,0.7);
         }
 
         .slogan {
-            font-size: 13px;
-            letter-spacing: 2px;
-            color: #d1d5db;
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: #e2e8f0;
             text-transform: uppercase;
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.4);
             display: inline-block;
             padding-bottom: 8px;
         }
@@ -87,21 +74,23 @@
         /* Yenileniyoruz Ana Yazısı */
         .main-heading {
             font-family: 'Cinzel', serif;
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 700;
             color: #d4af37;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+            text-shadow: 0 3px 12px rgba(0,0,0,0.8);
         }
 
         /* Açıklama Yazısı */
         .description {
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.6;
-            color: #e5e7eb;
-            margin-bottom: 30px;
+            color: #f1f5f9;
+            margin-bottom: 35px;
             font-weight: 300;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            max-width: 600px;
         }
 
         /* Butonlar Grubu */
@@ -110,6 +99,8 @@
             flex-direction: column;
             gap: 15px;
             align-items: center;
+            width: 100%;
+            max-width: 340px;
         }
 
         /* Genel Buton Stili */
@@ -119,14 +110,13 @@
             justify-content: center;
             gap: 12px;
             width: 100%;
-            max-width: 320px;
-            padding: 14px 24px;
+            padding: 15px 24px;
             border-radius: 30px;
             font-size: 15px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
             background: linear-gradient(135deg, #e6ca65 0%, #b8860b 100%);
             color: #0b2318;
             border: 1px solid #ffd700;
@@ -134,7 +124,7 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
             background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
         }
 
@@ -146,44 +136,41 @@
 
         /* Mobil Uyumlu Boyutlandırma */
         @media (max-width: 600px) {
-            .hotel-title { font-size: 22px; }
-            .main-heading { font-size: 28px; }
-            .description { font-size: 13px; }
-            .content-card { padding: 30px 15px; }
-            .btn { font-size: 14px; padding: 12px 20px; }
+            .bg-container { padding: 30px 15px; }
+            .hotel-title { font-size: 26px; letter-spacing: 2px; }
+            .slogan { font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; }
+            .main-heading { font-size: 32px; letter-spacing: 3px; }
+            .description { font-size: 14px; margin-bottom: 25px; }
+            .btn { font-size: 14px; padding: 13px 20px; }
         }
     </style>
 </head>
 <body>
 
     <div class="bg-container">
-        <div class="content-card">
-            
-            <div class="stars">★ ★ ★</div>
-            <h1 class="hotel-title">Angels Garden Hotel</h1>
-            <div class="slogan">Tarihin Kalbi, Şehrin Huzuru</div>
-            
-            <h2 class="main-heading">YENİLENİYORUZ</h2>
-            
-            <p class="description">
-                Sizlere daha güzel bir deneyim sunmak için hazırlanıyoruz.<br>
-                Çok yakında yeniden sizlerleyiz.
-            </p>
+        <div class="stars">★ ★ ★</div>
+        <h1 class="hotel-title">Angels Garden Hotel</h1>
+        <div class="slogan">Tarihin Kalbi, Şehrin Huzuru</div>
+        
+        <h2 class="main-heading">YENİLENİYORUZ</h2>
+        
+        <p class="description">
+            Sizlere daha güzel bir deneyim sunmak için hazırlanıyoruz.<br>
+            Çok yakında yeniden sizlerleyiz.
+        </p>
 
-            <div class="buttons-container">
-                <!-- WhatsApp Butonu (Telefon numaranızı yazın) -->
-                <a href="https://wa.me/905XXXXXXXXXX" class="btn" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001l-1.416 5.17 5.293-1.388c1.464.798 3.115 1.218 4.778 1.219h.003c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.924-7.062-1.886-1.886-4.393-2.923-7.065-2.924zm5.82 14.161c-.241.677-1.401 1.293-1.921 1.373-.52.079-1.201.112-3.447-.811-2.873-1.182-4.721-4.108-4.864-4.298-.143-.191-1.163-1.547-1.163-2.95 0-1.402.735-2.092.995-2.378.26-.286.568-.358.757-.358.189 0 .378.002.542.01.173.008.405-.065.633.482.228.547.78 1.905.847 2.043.067.138.112.302.022.481-.09.18-.135.292-.27.45-.135.158-.284.353-.406.473-.135.135-.276.282-.119.552.158.27.7 1.155 1.503 1.87 1.032.92 1.903 1.204 2.173 1.339.27.135.428.112.585-.067.158-.18.677-.79.858-1.06.18-.27.36-.225.607-.135.247.09 1.568.739 1.838.874.27.135.45.202.518.315.068.113.068.655-.173 1.332z"/></svg>
-                    WhatsApp ile İletişim
-                </a>
+        <div class="buttons-container">
+            <!-- WhatsApp Butonu (Numaranızı buraya yazın) -->
+            <a href="https://wa.me/905XXXXXXXXXX" class="btn" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001l-1.416 5.17 5.293-1.388c1.464.798 3.115 1.218 4.778 1.219h.003c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.924-7.062-1.886-1.886-4.393-2.923-7.065-2.924zm5.82 14.161c-.241.677-1.401 1.293-1.921 1.373-.52.079-1.201.112-3.447-.811-2.873-1.182-4.721-4.108-4.864-4.298-.143-.191-1.163-1.547-1.163-2.95 0-1.402.735-2.092.995-2.378.26-.286.568-.358.757-.358.189 0 .378.002.542.01.173.008.405-.065.633.482.228.547.78 1.905.847 2.043.067.138.112.302.022.481-.09.18-.135.292-.27.45-.135.158-.284.353-.406.473-.135.135-.276.282-.119.552.158.27.7 1.155 1.503 1.87 1.032.92 1.903 1.204 2.173 1.339.27.135.428.112.585-.067.158-.18.677-.79.858-1.06.18-.27.36-.225.607-.135.247.09 1.568.739 1.838.874.27.135.45.202.518.315.068.113.068.655-.173 1.332z"/></svg>
+                WhatsApp ile İletişim
+            </a>
 
-                <!-- Telegram Butonu (Kullanıcı adınızı yazın) -->
-                <a href="https://t.me/kullaniciadi" class="btn" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.43 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .36.03.52.17.13.12.17.28.19.42-.01.06.01.16 0 .22z"/></svg>
-                    Telegram ile İletişim
-                </a>
-            </div>
-
+            <!-- Telegram Butonu (Kullanıcı adınızı buraya yazın) -->
+            <a href="https://t.me/kullaniciadi" class="btn" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.43 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .36.03.52.17.13.12.17.28.19.42-.01.06.01.16 0 .22z"/></svg>
+                Telegram ile İletişim
+            </a>
         </div>
     </div>
 
