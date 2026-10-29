@@ -2,69 +2,73 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Angel's Garden Hotel</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angels Garden Hotel - Yenileniyoruz</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #0b2318; /* Arka plan uyumlu koyu renk */
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .landing-container {
+            background-image: url('arkaplan.jpg');
+            background-size: contain; /* Masaüstü için */
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        .click-area {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            height: 50px;
+            border-radius: 30px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .whatsapp-link {
+            bottom: 25%;
+        }
+        .telegram-link {
+            bottom: 16%;
+        }
 
-    body {
-      margin: 0;
-      background: #183d2c;
-    }
-
-   .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
-    }
-
-    .hero img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .link {
-      position: absolute;
-      top: 82.1%;
-      height: 8.3%;
-      display: block;
-      border-radius: 999px;
-    }
-
-    .whatsapp {
-      left: 36.3%;
-      width: 13.2%;
-    }
-
-    .telegram {
-      left: 51%;
-      width: 13.2%;
-    }
-  </style>
+        /* TELEFONLAR İÇİN ÖZEL AYARLAR (Dikey Ekran) */
+        @media (max-width: 768px) {
+            .landing-container {
+                background-size: cover; /* Mobilde ekranı doldursun */
+                background-position: center center;
+            }
+            .click-area {
+                width: 80%; /* Mobilde ekrana göre esneklik kazanır */
+                max-width: 320px;
+                height: 52px;
+            }
+            .whatsapp-link {
+                bottom: 22%; /* Telefonda butonların yüksekliği */
+            }
+            .telegram-link {
+                bottom: 14%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <main class="hero">
-    <img src="8E5E388A-D1F2-431D-BCAD-239552F261BF.png" alt="Angel's Garden Hotel İstanbul silüeti">
 
-    <a
-      class="link whatsapp"
-      href="https://wa.me/905419027047"
-      aria-label="WhatsApp ile iletişim"
-    ></a>
+    <div class="landing-container">
+        <!-- WhatsApp Linki (Numaranızı buraya yazın) -->
+        <a href="https://wa.me/905XXXXXXXXXX" class="click-area whatsapp-link" target="_blank"></a>
+        
+        <!-- Telegram Linki (Kullanıcı adınızı buraya yazın) -->
+        <a href="https://t.me/kullaniciadi" class="click-area telegram-link" target="_blank"></a>
+    </div>
 
-    <a
-      class="link telegram"
-      href="https://t.me/"
-      aria-label="Telegram"
-    ></a>
-  </main>
 </body>
 </html>
