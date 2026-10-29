@@ -34,7 +34,7 @@
             align-items: center;
         }
 
-        /* Arka Plan Görseli */
+        /* Arka Plan Görseli (Yazısız Manzara Versiyonu) */
         .bg-image {
             position: absolute;
             top: 0;
@@ -42,9 +42,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             z-index: 1;
-            /* Arka planı hafif karartarak yazıların okunmasını sağlar */
-            filter: brightness(0.85);
+            filter: brightness(0.9); /* Yazıların okunabilirliğini artırmak için hafif karartma */
         }
 
         /* Üst / Orta Katman: Logo & Başlık Bilgileri */
@@ -54,27 +54,27 @@
             width: 100%;
             max-width: 900px;
             text-align: center;
-            padding: 40px 20px 0 20px;
+            padding-top: 5vh;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Logo Simgesi / Çiçek Motifi */
+        /* Logo Simgesi */
         .brand-icon {
-            width: 60px;
+            width: 70px;
             height: auto;
             margin-bottom: 8px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.6));
         }
 
         /* Yıldızlar */
         .stars {
             color: #d4af37;
-            font-size: 18px;
-            letter-spacing: 6px;
+            font-size: 20px;
+            letter-spacing: 8px;
             margin-bottom: 12px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.7);
         }
 
         /* Çizgili Yapı ve Otel İsmi */
@@ -84,54 +84,56 @@
             justify-content: center;
             width: 100%;
             gap: 15px;
+            padding: 0 20px;
         }
 
         .title-line {
             flex: 1;
             height: 1px;
             background: linear-gradient(to right, transparent, #d4af37, transparent);
-            max-width: 150px;
+            max-width: 120px;
         }
 
         .hotel-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 5vw, 3.8rem); /* Ekran boyutuna göre otomatik ölçeklenir */
+            font-size: clamp(2rem, 4.5vw, 4rem); /* Tablet ve mobilde mükemmel ölçeklenir */
             color: #e5c158;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.8);
-            line-height: 1.1;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.85);
+            white-space: nowrap;
         }
 
         .hotel-subtitle {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1rem, 2.5vw, 1.8rem);
+            font-size: clamp(1.1rem, 2.2vw, 1.8rem);
             color: #ffffff;
-            letter-spacing: 8px;
-            margin-top: 5px;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+            letter-spacing: 10px;
+            margin-top: 6px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.85);
         }
 
         /* Slogan (El Yazısı Stili) */
         .hotel-slogan {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-size: clamp(1.8rem, 3.8vw, 2.8rem);
             color: #ffffff;
             margin-top: 15px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+            text-shadow: 0 3px 10px rgba(0,0,0,0.9);
             font-weight: normal;
         }
 
         /* Alt Katman: Butonlar */
         .content-overlay {
             position: relative;
-            bottom: 4%;
-            width: 100%;
             z-index: 2;
+            width: 100%;
+            padding-bottom: 4vh;
             display: flex;
             justify-content: center;
-            padding: 0 15px;
+            padding-left: 15px;
+            padding-right: 15px;
         }
 
         .buttons-wrapper {
@@ -173,16 +175,13 @@
             font-weight: bold;
         }
 
-        /* Mobil Uyumluluk İnce Ayarları */
+        /* Tablet ve Mobil Uyumluluk İnce Ayarları */
         @media (max-width: 768px) {
-            .header-content {
-                padding-top: 25px;
-            }
             .title-line {
-                display: none; /* Mobilde yan çizgileri gizleyerek yazıyı rahatlatır */
+                display: none; /* Mobilde dar alanda taşmayı önlemek için çizgiler gizlenir */
             }
-            .content-overlay {
-                bottom: 3%;
+            .hotel-title {
+                white-space: normal; /* Mobilde uzun gelirse alt alta geçebilir */
             }
             .custom-btn {
                 padding: 10px 18px;
@@ -194,12 +193,12 @@
 <body>
 
     <div class="coming-soon-container">
-        <!-- Arka Plan Görseli (Boğaz / Otel Manzarası Resminiz) -->
-        <img src="8E5E388A-D1F2-431D-BCAD-239552F261BF.png?v=999" alt="Angels Garden Hotel Background" class="bg-image">
+        <!-- Arka Plan Görseli (Yazısız Boğaz/Manzara Resminizin dosya adını buraya yazın) -->
+        <img src="YAZISIZ_MANZARA_DOSYA_ADI.png" alt="Angels Garden Hotel Background" class="bg-image">
         
         <!-- Canlı Başlık ve Logo Alanı -->
         <div class="header-content">
-            <!-- Çiçek Logosu SVG (İsterseniz img etiketi ile kendi logo SVG/PNG dosyanızı koyabilirsiniz) -->
+            <!-- Çiçek Logosu -->
             <svg class="brand-icon" viewBox="0 0 100 80" fill="#d4af37">
                 <path d="M50 0 C40 20 20 30 0 30 C20 40 30 60 50 80 C70 60 80 40 100 30 C80 30 60 20 50 0 Z" />
             </svg>
