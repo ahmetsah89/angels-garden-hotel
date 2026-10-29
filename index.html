@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angels Garden Hotel - Yenileniyoruz</title>
+    <!-- Google Fonts: Şık otel fontları -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -24,10 +29,12 @@
             width: 100vw;
             height: 100vh;
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
         }
 
+        /* Arka Plan Görseli */
         .bg-image {
             position: absolute;
             top: 0;
@@ -36,12 +43,90 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
+            /* Arka planı hafif karartarak yazıların okunmasını sağlar */
+            filter: brightness(0.85);
         }
 
+        /* Üst / Orta Katman: Logo & Başlık Bilgileri */
+        .header-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            padding: 40px 20px 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo Simgesi / Çiçek Motifi */
+        .brand-icon {
+            width: 60px;
+            height: auto;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+
+        /* Yıldızlar */
+        .stars {
+            color: #d4af37;
+            font-size: 18px;
+            letter-spacing: 6px;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+
+        /* Çizgili Yapı ve Otel İsmi */
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 15px;
+        }
+
+        .title-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d4af37, transparent);
+            max-width: 150px;
+        }
+
+        .hotel-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 5vw, 3.8rem); /* Ekran boyutuna göre otomatik ölçeklenir */
+            color: #e5c158;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+            line-height: 1.1;
+        }
+
+        .hotel-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1rem, 2.5vw, 1.8rem);
+            color: #ffffff;
+            letter-spacing: 8px;
+            margin-top: 5px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+        }
+
+        /* Slogan (El Yazısı Stili) */
+        .hotel-slogan {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: #ffffff;
+            margin-top: 15px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+            font-weight: normal;
+        }
+
+        /* Alt Katman: Butonlar */
         .content-overlay {
-            position: absolute;
+            position: relative;
             bottom: 4%;
-            left: 0;
             width: 100%;
             z-index: 2;
             display: flex;
@@ -66,8 +151,9 @@
             font-size: 15px;
             font-weight: 600;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             transition: transform 0.2s ease, opacity 0.2s ease;
+            backdrop-filter: blur(5px);
         }
 
         .custom-btn:hover {
@@ -87,7 +173,14 @@
             font-weight: bold;
         }
 
+        /* Mobil Uyumluluk İnce Ayarları */
         @media (max-width: 768px) {
+            .header-content {
+                padding-top: 25px;
+            }
+            .title-line {
+                display: none; /* Mobilde yan çizgileri gizleyerek yazıyı rahatlatır */
+            }
             .content-overlay {
                 bottom: 3%;
             }
@@ -101,10 +194,33 @@
 <body>
 
     <div class="coming-soon-container">
-        <!-- Arka Plan Görseli - YEPYENI VERSIYON -->
-        <img src="8E5E388A-D1F2-431D-BCAD-239552F261BF.png?v=999" alt="Angels Garden Hotel" class="bg-image">
+        <!-- Arka Plan Görseli (Boğaz / Otel Manzarası Resminiz) -->
+        <img src="8E5E388A-D1F2-431D-BCAD-239552F261BF.png?v=999" alt="Angels Garden Hotel Background" class="bg-image">
         
-        <!-- Buton Katmanı (Sadece WhatsApp ve Rezervasyon) -->
+        <!-- Canlı Başlık ve Logo Alanı -->
+        <div class="header-content">
+            <!-- Çiçek Logosu SVG (İsterseniz img etiketi ile kendi logo SVG/PNG dosyanızı koyabilirsiniz) -->
+            <svg class="brand-icon" viewBox="0 0 100 80" fill="#d4af37">
+                <path d="M50 0 C40 20 20 30 0 30 C20 40 30 60 50 80 C70 60 80 40 100 30 C80 30 60 20 50 0 Z" />
+            </svg>
+
+            <!-- Yıldızlar -->
+            <div class="stars">★ ★ ★</div>
+
+            <!-- Başlık ve Yan Çizgiler -->
+            <div class="title-wrapper">
+                <div class="title-line"></div>
+                <h1 class="hotel-title">ANGELS GARDEN</h1>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="hotel-subtitle">HOTEL</div>
+
+            <!-- Slogan -->
+            <p class="hotel-slogan">Şehrin kalbi, bahçenin huzuru...</p>
+        </div>
+
+        <!-- Buton Katmanı -->
         <div class="content-overlay">
             <div class="buttons-wrapper">
                 <!-- WhatsApp -->
